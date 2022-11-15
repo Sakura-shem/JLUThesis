@@ -4,8 +4,10 @@
 
 ## 样例展示
 <p align = "center">
-  ![image](https://user-images.githubusercontent.com/78149191/201933177-8abdce74-9191-4b18-8f1f-fc5129d6a306.png)
+  <img src = "https://user-images.githubusercontent.com/78149191/201933177-8abdce74-9191-4b18-8f1f-fc5129d6a306.png">
 </p>
+<br>
+
 ![样例PDF](https://github.com/Sakura-shem/JLUThesis/blob/master/main.pdf)
 
 ## Todo
