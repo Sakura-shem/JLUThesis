@@ -159,8 +159,10 @@
 %-------------------------------------------------------------------------------
 %                目录
 %-------------------------------------------------------------------------------
-\renewcommand\contentsname{\bf \zihao{-3} 目 \hspace{2pt} 录}
-% \renewcommand\contentsname{\hfill \bf \zihao{-3} 目 \hspace{2pt} 录 \hfill}
+\renewcommand{\contentsname}{目 \hspace{2pt} 录}
+% \renewcommand{\cftafterZtitle}{[\baselineskip]\mbox{}\hfill{\normalfont Page}\hfill}
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}        % title 前间隔
+\renewcommand{\cftaftertoctitle}{\hfill}
 \renewcommand\cftchapfont{\songti \zihao{-4}}
 \renewcommand\cftsecfont{\songti \zihao{-4}}
 \renewcommand\cftsubsecfont{\songti \zihao{-4}}
@@ -168,8 +170,8 @@
 \renewcommand{\cftchappagefont }{}                          % 设置索引不加粗
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}       % 目录后一行连续的点
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}       % 目录后一行连续的点
-\setlength{\cftaftertoctitleskip}{0pt}                       % title 后间隔
-\setlength{\cftbeforetoctitleskip}{0pt}                       % title 前间隔
+\setlength{\cftbeforetoctitleskip}{0pt}                       % title 上间隔
+\setlength{\cftaftertoctitleskip}{0pt}                       % title 下间隔
 \setlength{\cftbeforechapskip}{5pt}                         % chapter 间隔
 \setlength{\cftbeforesecskip}{5pt}                          % section 间隔
 \setlength{\cftbeforesubsecskip}{5pt}                       % subsection 间隔
