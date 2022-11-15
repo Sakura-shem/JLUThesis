@@ -8,7 +8,7 @@
 </p>
 <br>
 
-![样例PDF](https://github.com/Sakura-shem/JLUThesis/blob/master/main.pdf)
+[样例PDF](https://github.com/Sakura-shem/JLUThesis/blob/master/main.pdf)
 
 ## Todo
 - 优化细节。
