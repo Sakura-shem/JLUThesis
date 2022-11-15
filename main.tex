@@ -1,0 +1,47 @@
+\documentclass{JLUThesis}
+
+\begin{document}
+
+\let\cleardoublepage\clearpage
+
+% 封面
+\makecover
+
+
+% 承诺书
+\commitment
+\thispagestyle{style@empty}
+
+% 中文摘要
+\pagenumbering{Roman}
+\setcounter{page}{0}
+\pagestyle{style@onlyfoot}
+\input{data/cabstract}
+% \cabstract{摘要。\par 中文摘要！}{\quad 关键词1 \quad 关键词2}
+\thispagestyle{style@onlyfoot}
+% 英文摘要
+\input{data/eabstract}
+% \eabstract{摘。\par 中文摘！}{\quad 关键词1 \quad 关键词2}
+\thispagestyle{style@onlyfoot}
+
+
+% 目录
+\newpage
+\pagenumbering{gobble} 
+{\tableofcontents\thispagestyle{style@empty}}
+\clearpage
+
+% 正文
+\pagenumbering{arabic} 
+\setcounter{page}{1}
+\pagestyle{style@normal}
+
+
+\input{data/chapter01.tex}
+
+% 参考文献
+
+% 致谢
+\input{data/Acknowledgements.tex}
+
+\end{document}
