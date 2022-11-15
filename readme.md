@@ -4,7 +4,7 @@
 
 ## 样例展示
 <p align = "center">
-  <img src="https://user-images.githubusercontent.com/5097752/55679059-f250d300-5936-11e9-8dfe-937a64a0c6bf.png" width="800px">
+  ![image](https://user-images.githubusercontent.com/78149191/201933177-8abdce74-9191-4b18-8f1f-fc5129d6a306.png)
 </p>
 ![样例PDF](https://github.com/Sakura-shem/JLUThesis/blob/master/main.pdf)
 
