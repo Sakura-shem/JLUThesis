@@ -6,7 +6,7 @@
 <p align = "center">
   <img src="https://user-images.githubusercontent.com/5097752/55679059-f250d300-5936-11e9-8dfe-937a64a0c6bf.png" width="800px">
 </p>
-[样例PDF](https://github.com/csarron/bsThesisWHU)
+[样例PDF](https://github.com/Sakura-shem/JLUThesis/blob/master/main.pdf)
 
 ## Todo
 - 优化细节。
