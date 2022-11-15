@@ -18,6 +18,8 @@
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
 
+\setmainfont{Times New Roman}
+
 \setCJKfamilyfont{cusong}[AutoFakeBold = {2.17}]{SimSun}
 \renewcommand*{\songti}{\CJKfamily{cusong}}
 \renewcommand{\baselinestretch}{1.5}
@@ -129,7 +131,7 @@
     \vspace{-0.9cm}
     \newlength{\eboxwidth}
     \settowidth{\eboxwidth}{#1}
-    \hspace{\eboxwidth} \hspace{0.3cm} \parbox[m][2em][t]{30em}{#2}
+    \hspace{\eboxwidth} \hspace{0.3cm} \parbox[m][2em][t]{32em}{#2}
     \vfill
 }
 \newcommand{\baseabstract}[2]{
