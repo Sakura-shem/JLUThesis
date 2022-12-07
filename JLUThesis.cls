@@ -61,7 +61,7 @@
     \end{titlepage}
 }
 
-
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
 
 %-------------------------------------------------------------------------------
 %                页眉页脚设计

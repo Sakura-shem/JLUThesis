@@ -17,11 +17,10 @@
 \setcounter{page}{0}
 \pagestyle{style@onlyfoot}
 \input{data/cabstract}
-% \cabstract{摘要。\par 中文摘要！}{\quad 关键词1 \quad 关键词2}
 \thispagestyle{style@onlyfoot}
+
 % 英文摘要
 \input{data/eabstract}
-% \eabstract{摘。\par 中文摘！}{\quad 关键词1 \quad 关键词2}
 \thispagestyle{style@onlyfoot}
 
 
@@ -39,7 +38,17 @@
 
 \input{data/chapter01.tex}
 
+test01\upcite{tie2013review}
+test02\upcite{李升波2014汽车经济性驾驶技术及应用概述}
+test03\upcite{zhang2016supervisory}
+test04\upcite{王慧璇2012基于动态规划的}
+
+
 % 参考文献
+\bibliographystyle{Ref/JLUBst}
+\bibliography{Ref/refs}
+\addcontentsline{toc}{chapter}{参考文献}
+
 
 % 致谢
 \input{data/Acknowledgements.tex}
