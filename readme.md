@@ -8,7 +8,7 @@ Make it based on the word template of 2019's School of Communication Engineering
 ## Example
 <div style="text-align: center">
     <img width="1884" alt="Snipaste_2023-04-18_01-01-44" src="https://user-images.githubusercontent.com/78149191/232853416-f125d34f-eb02-421f-8fd4-6338e262c22d.png"> <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">Example</div>
+    <p align="center">Example</p>
 </div>
 
 [Example PDF](https://github.com/Sakura-shem/JLUThesis/blob/master/main.pdf)
