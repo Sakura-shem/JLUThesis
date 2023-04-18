@@ -15,42 +15,45 @@
 % 中文摘要
 \pagenumbering{Roman}
 \setcounter{page}{0}
-\pagestyle{style@onlyfoot}
-\input{data/cabstract}
-\thispagestyle{style@onlyfoot}
+\pagestyle{style@gray}
+
+\input{support/cabstract}
+\thispagestyle{style@gray}
 
 % 英文摘要
-\input{data/eabstract}
-\thispagestyle{style@onlyfoot}
-
+\input{support/eabstract}
+\thispagestyle{style@gray}
 
 % 目录
 \newpage
-\pagenumbering{gobble} 
-{\tableofcontents\thispagestyle{style@empty}}
+\tableofcontents
+\thispagestyle{style@gray}
 \clearpage
+
 
 % 正文
 \pagenumbering{arabic} 
 \setcounter{page}{1}
 \pagestyle{style@normal}
 
+\input{chapters/chapter01.tex}
 
-\input{data/chapter01.tex}
+
+
+
+% 参考文献
 
 test01\upcite{tie2013review}
 test02\upcite{李升波2014汽车经济性驾驶技术及应用概述}
 test03\upcite{zhang2016supervisory}
 test04\upcite{王慧璇2012基于动态规划的}
 
-
-% 参考文献
 \bibliographystyle{Ref/JLUBst}
 \bibliography{Ref/refs}
 \addcontentsline{toc}{chapter}{参考文献}
 
 
 % 致谢
-\input{data/Acknowledgements.tex}
+\input{support/Acknowledgements.tex}
 
 \end{document}

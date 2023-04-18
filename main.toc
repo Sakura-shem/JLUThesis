@@ -1,0 +1,11 @@
+\contentsline {chapter}{\numberline {第1章\hspace {.3em}}18/04/2023 update}{1}{}%
+\contentsline {section}{\numberline {1.1}研究背景及意义}{1}{}%
+\contentsline {section}{\numberline {1.2}汽车经济性行驶的研究现状}{1}{}%
+\contentsline {section}{\numberline {1.3}深度强化学习的研究现状}{2}{}%
+\contentsline {chapter}{\numberline {第2章\hspace {.3em}}绪论}{3}{}%
+\contentsline {section}{\numberline {2.1}课题研究背景及意义}{3}{}%
+\contentsline {section}{\numberline {2.2}汽车经济性行驶的研究现状}{3}{}%
+\contentsline {section}{\numberline {2.3}深度强化学习的研究现状}{3}{}%
+\contentsline {subsection}{\numberline {2.3.1}马尔可夫决策过程}{3}{}%
+\contentsline {chapter}{参考文献}{4}{}%
+\contentsline {chapter}{致\hspace {1em}谢}{5}{}%

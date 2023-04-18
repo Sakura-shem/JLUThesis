@@ -11,26 +11,37 @@
 %-------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{JLUThesis}[2014/06/10 v1.1 Beijing Jiaotong University Thesis document class]
-\LoadClass[UTF8, fntef, fancyhdr, oneside, a4paper, cs4size]{ctexbook}       % 论文使用A4纸，默认小四号字体
+\LoadClass[UTF8, oneside, a4paper]{ctexbook}       % 论文使用A4纸，默认小四号字体
 
-\RequirePackage{geometry}
+\RequirePackage{xcolor}
 \RequirePackage{tocloft}
+\RequirePackage{fancyhdr}
+\RequirePackage{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
+% font 
+\RequirePackage{fontspec}
+% cover
+\RequirePackage{multirow}
+\RequirePackage{booktabs}
+\RequirePackage{tabularray}
 
-\setmainfont{Times New Roman}
-
-\setCJKfamilyfont{cusong}[AutoFakeBold = {2.17}]{SimSun}
+% 字体
+\setmainfont[UprightFont=*,]{Times New Roman}
+\setCJKfamilyfont{cusong}[Path=fonts/, AutoFakeBold = {2.17}]{SimSun.ttf}
 \renewcommand*{\songti}{\CJKfamily{cusong}}
+% 1.5 倍行距
 \renewcommand{\baselinestretch}{1.5}
 
 % 版面上空2.5cm，下空2cm，左空2.8cm，右空1.8cm
 \geometry{a4paper, top = 25mm, bottom = 25mm, left = 28mm, right = 18mm}
 
+
 %-------------------------------------------------------------------------------
 %                加载配置文件
 %-------------------------------------------------------------------------------
 \input{JLUThesis.cfg}
+
 
 %-------------------------------------------------------------------------------
 %                封面设计
@@ -43,12 +54,49 @@
         \quad \\[0.42cm]
         {\centering\includegraphics[width = 0.8\textwidth]{figures/logo.png}\\[0.77cm] }
         \center 
-        \songti \zihao{-0} \bfseries 本科生毕业论文（设计）   \\[2.58cm]
+        \songti \zihao{-0} \bfseries 本科生毕业论文（设计）   \\[1.55cm]
 
-        \songti \zihao{3} \bfseries 中文题目 \hspace{-0.4cm} \underline{\makebox[10cm]{\songti \zihao{3} \bfseries \cover@ctitle}}  \\[3pt]
-                                    \hspace{2cm}    \underline{\makebox[10cm]{}}  \\
-        \songti \zihao{3} \bfseries 英文题目 \hspace{-0.4cm} \underline{\makebox[10cm]{\songti \zihao{3} \bfseries \cover@etitle}}  \\[3pt]
-                                    \hspace{2cm}    \underline{\makebox[10cm]{}}  \\[2.6cm]
+        % \songti \zihao{3} \bfseries 中文题目 \hspace{-0.35cm} \underline{\makebox[10cm]{\songti \zihao{3} \cover@ctitle}}  \\[3pt]
+        %                             \hspace{2cm}    \underline{\makebox[10cm]{}}  \\
+        % 中文题目
+        \hspace{1.2cm}
+        \begin{tabular}{cp{3.8in}}
+            \bfseries \fontsize{16pt}{16pt} \songti 中文题目 \hspace{-0.4cm} & \multirow[t]{2}{3.8in}
+            {
+                \setstretch{0.2}
+                \centering
+                \fontsize{16pt}{16pt}
+                \songti
+                \hspace{-0.4cm}
+                \cover@ctitle
+                \hspace{-0.2cm}
+            }  \\
+            % 下划线和文字
+            \addlinespace[-16pt]
+            \cline{2-2}
+                    & \\[-1.1cm]
+            \cline{2-2}
+        \end{tabular}\hspace*{\fill} \\[-0.5cm]
+        
+        % 英文题目
+        \hspace{1.2cm}
+        \begin{tabular}{cp{3.8in}}
+            \bfseries \fontsize{16pt}{16pt} \songti 英文题目 \hspace{-0.4cm} & \multirow[t]{2}{3.8in}
+            {
+                \setstretch{0.2}
+                \centering
+                \fontsize{16pt}{16pt}
+                \songti
+                \hspace{-0.4cm}
+                \cover@ctitle
+                \hspace{-0.2cm}
+            }  \\
+            % 下划线和文字
+            \addlinespace[-16pt]
+            \cline{2-2}
+                    & \\[-1.1cm]
+            \cline{2-2}
+        \end{tabular}\hspace*{\fill} \\[3cm]
         
         \songti \zihao{3} \bfseries 学生姓名            \underline{\makebox[10cm]{\cover@author}}  \\[3pt]
         \songti \zihao{3} \bfseries 学\hspace{2em}号    \underline{\makebox[10cm]{\cover@studentid}}  \\[3pt]
@@ -63,12 +111,10 @@
 
 \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
 
+
 %-------------------------------------------------------------------------------
 %                页眉页脚设计
 %-------------------------------------------------------------------------------
-
-
-
 \setlength{\voffset}{-15mm}
 \setlength{\topmargin}{0mm}
 \setlength{\headheight}{20pt}
@@ -86,6 +132,12 @@
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
+\fancypagestyle{style@gray}{
+    \fancyhf{}
+	\fancyfoot[R]{\color{gray} \zihao{-5} \thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
 \fancypagestyle{style@normal}{
 	\fancyhead{}
 	\fancyhead[C]{\zihao{-5} \songti \leftmark}
@@ -95,6 +147,7 @@
 	\renewcommand{\footrulewidth}{0pt}
     \renewcommand{\headruleskip}{2.5pt}
 }
+
 
 %-------------------------------------------------------------------------------
 %                承诺书
@@ -110,6 +163,7 @@
     \vfill
 }
 
+
 %-------------------------------------------------------------------------------
 %                摘要
 %-------------------------------------------------------------------------------
@@ -117,21 +171,20 @@
     \begin{flushleft}
         \zihao{-4} \songti {\bfseries {#1}} 
     \end{flushleft}
-    \vspace{-0.95cm}
+    \vspace{-0.93cm}
     \newlength{\cboxwidth}
     \settowidth{\cboxwidth}{#1}
-    \hspace{\cboxwidth} \parbox[m][2em][t]{30em}{#2}
+    \hspace{\cboxwidth} \parbox[m][2em][t]{30em}{\zihao{-4} \songti #2}
     \vfill
-
 }
 \newcommand{\ebox}[2]{
     \begin{flushleft}
         \zihao{-4} \songti {\bfseries {#1}} 
     \end{flushleft}
-    \vspace{-0.9cm}
+    \vspace{-0.88cm}
     \newlength{\eboxwidth}
     \settowidth{\eboxwidth}{#1}
-    \hspace{\eboxwidth} \hspace{0.3cm} \parbox[m][2em][t]{32em}{#2}
+    \hspace{\eboxwidth} \hspace{0.3cm} \parbox[m][2em][t]{37em}{\zihao{-4} \songti #2}
     \vfill
 }
 \newcommand{\baseabstract}[2]{

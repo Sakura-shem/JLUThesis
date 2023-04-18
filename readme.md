@@ -11,11 +11,16 @@ Make it based on the word template of 2019's School of Communication Engineering
 </p>
 <br>
 
+## Usage
+<p align = "center">
+  <img src = "https://user-images.githubusercontent.com/78149191/201933177-8abdce74-9191-4b18-8f1f-fc5129d6a306.png">
+</p>
+<br>
+
 [样例PDF](https://github.com/Sakura-shem/JLUThesis/blob/master/main.pdf)
 
 ## Todo
 - 优化细节。
-欢迎提交 Pull Request。
 
 ## 致谢
-- [bjtuThesis](https://github.com/csarron/bsThesisWHU)
+- [bjtuThesis](https://github.com/billhu0228/BJTUThesisTemplete)
