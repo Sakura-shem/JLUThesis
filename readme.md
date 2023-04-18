@@ -8,7 +8,7 @@ Make it based on the word template of 2019's School of Communication Engineering
 ## Example
 <br>
 
-[example](https://github.com/Sakura-shem/JLUThesis/blob/master/main.pdf)
+[Example PDF](https://github.com/Sakura-shem/JLUThesis/blob/master/main.pdf)
 
 ## Usage
 **star ⭐**
