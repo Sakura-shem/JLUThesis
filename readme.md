@@ -6,10 +6,8 @@ The Project provides a Latex template for JiLin university Graduation Thesis.
 Make it based on the word template of 2019's School of Communication Engineering.
 
 ## Example
-<p align = "center">
-  <img src = "https://user-images.githubusercontent.com/78149191/201933177-8abdce74-9191-4b18-8f1f-fc5129d6a306.png">
-</p>
 <br>
+
 [example](https://github.com/Sakura-shem/JLUThesis/blob/master/main.pdf)
 
 ## Usage
