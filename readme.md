@@ -24,7 +24,6 @@ Make it based on the word template of 2019's School of Communication Engineering
 
 ## Todo
 - 优化细节。
-- 
 
 ## Thanks
 - [bjtuThesis](https://github.com/csarron/bsThesisWHU)
