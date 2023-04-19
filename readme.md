@@ -19,10 +19,12 @@ Make it based on the word template of 2019's School of Communication Engineering
   - Download [JLU-Thesis-Overleaf.zip](./JLU-Thesis-Overleaf.zip);
   - Create project by import zip file;
   - Choose Compiler as XeLaTex;
+  - **OverLeaf can't edit cfg file. you can edit it offline then upload**
 - Local: Miktex；
 
 ## Todo
 - 优化细节。
+- 
 
 ## Thanks
 - [bjtuThesis](https://github.com/csarron/bsThesisWHU)

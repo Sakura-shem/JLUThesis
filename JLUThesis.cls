@@ -61,7 +61,7 @@
         % 中文题目
         \hspace{1.2cm}
         \begin{tabular}{cp{3.8in}}
-            \bfseries \fontsize{16pt}{16pt} \songti 中文题目 \hspace{-0.4cm} & \multirow[t]{2}{3.8in}
+            \bfseries \fontsize{16pt}{16pt} \songti 中文题目 \hspace{-0.4cm} & \vspace{-1pt} \multirow[t]{2}{3.8in}
             {
                 \setstretch{0.2}
                 \centering
@@ -72,7 +72,7 @@
                 \hspace{-0.2cm}
             }  \\
             % 下划线和文字
-            \addlinespace[-16pt]
+            \addlinespace[-17.5pt]
             \cline{2-2}
                     & \\[-1.1cm]
             \cline{2-2}
@@ -81,18 +81,17 @@
         % 英文题目
         \hspace{1.2cm}
         \begin{tabular}{cp{3.8in}}
-            \bfseries \fontsize{16pt}{16pt} \songti 英文题目 \hspace{-0.4cm} & \multirow[t]{2}{3.8in}
+            \bfseries \fontsize{16pt}{16pt} \songti 英文题目 \hspace{-0.4cm} & \vspace{-0.1cm} \multirow[t]{2}{3.8in}
             {
-                \setstretch{0.2}
+                \setstretch{1.1}
                 \centering
-                \fontsize{16pt}{16pt}
-                \songti
+                \zihao{4}
                 \hspace{-0.4cm}
-                \cover@ctitle
+                \cover@etitle
                 \hspace{-0.2cm}
             }  \\
             % 下划线和文字
-            \addlinespace[-16pt]
+            \addlinespace[-18pt]
             \cline{2-2}
                     & \\[-1.1cm]
             \cline{2-2}
