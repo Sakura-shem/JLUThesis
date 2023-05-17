@@ -154,8 +154,8 @@
         {\songti \zihao{-0} \bfseries 本科生毕业论文（设计）}   \\[1.55cm]
         
         \multilingualTitles
-        {\bfseries \fontsize{16pt}{16pt} \songti 很长长长长长长长长长长长长长长长长长的标题}
-        {\bfseries Very Looong Looo }
+        {\bfseries \fontsize{16pt}{16pt} \songti \cover@ctitle}
+        {\bfseries \cover@etitle }
 
         \vspace{3cm}
         \setstretch{1.5} 
