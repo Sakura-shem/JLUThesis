@@ -170,8 +170,7 @@
     \end{titlepage}
 }
 
-% 引用
-\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+
 
 
 %-------------------------------------------------------------------------------
@@ -328,10 +327,15 @@
         afterskip = {0pt},
     }
 }
+% 引用
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
 
 % 图片 --- 图片路径，图片标题，图片引用名
 \newcommand{\insertfig}[3]{
-    \begin{figure}[htbp] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \begin{figure}[htb] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+        % 图片与上下文的间距
+        \setlength{\intextsep}{10pt}
+        \setlength{\belowcaptionskip}{0cm} %调整图片标题与下文距离
         \centering %图片居中
         \includegraphics[width=0.9\textwidth]{#1} %插入图片，[]中设置图片大小，{}中是图片文件名
         \caption{#2} % 最终文档中希望显示的图片标题
