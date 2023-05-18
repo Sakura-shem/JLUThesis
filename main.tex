@@ -2,32 +2,32 @@
 
 \begin{document}
 
+% cover style
+\coverstyle
+
 % 封面
 \makecover
 
 % 承诺书
 \commitment
 
-\pagenumbering{Roman}
-\setcounter{page}{0}
-\pagestyle{style@gray}
+% header style
+\headerstyle
 
 % 中文摘要
 \input{support/cabstract}
-\clearpage 
 
 % 英文摘要
 \input{support/eabstract}
-\clearpage 
 
 % 目录
 \tableofcontents
 \cleardoublepage
 
 % 正文
-\pagenumbering{arabic} 
-\setcounter{page}{1}
-\pagestyle{style@normal}
+% content style
+\contentstyle
+
 % 第一章
 \input{chapters/chapter1.tex}
 % 第二章
@@ -48,4 +48,3 @@
 \input{support/Acknowledgements.tex}
 
 \end{document}
-

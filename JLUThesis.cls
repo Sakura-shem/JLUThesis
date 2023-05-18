@@ -214,14 +214,32 @@
     \end{titlepage}
 }
 
+\newcommand{\coverstyle}{
+    \pagestyle{style@empty}
+    \ctexset {chapter = {pagestyle = style@empty}}
+}
+
+\newcommand{\headerstyle}{
+    \pagenumbering{Roman}
+    \setcounter{page}{0}
+    \pagestyle{style@gray}
+    \ctexset {chapter = {pagestyle = style@gray}}
+}
+
+\newcommand{\contentstyle}{
+    \pagenumbering{arabic} 
+    \setcounter{page}{1}
+    \pagestyle{style@normal}
+    \ctexset {chapter = {pagestyle = style@normal}}
+}
+
+
 %-------------------------------------------------------------------------------
 %                承诺书
 %-------------------------------------------------------------------------------
-\newcommand{\commitment}[0]{
+\newcommand{\commitment}{
     \setlength{\baselineskip}{30pt}
-    \ctexset {chapter = {pagestyle = style@empty}}
     \chapter*{\zihao{-2} \songti \commitment@title}
-    \ctexset {chapter = {pagestyle = style@normal}}
     % \addcontentsline{toc}{chapter}{\commitment@title}
     \vspace{1.5cm}
     {\zihao{4} \songti \commitment@content} \\[10cm]
@@ -254,10 +272,7 @@
 }
 \newcommand{\baseabstract}[3]{
     \setlength{\baselineskip}{20pt}
-    \pagestyle{style@gray}
-    \ctexset {chapter = {pagestyle = style@gray}}
     \chapter*{\zihao{3} \songti \bfseries #1}
-    \ctexset {chapter = {pagestyle = style@normal}}
     % \addcontentsline{toc}{chapter}{#1}
     {\zihao{-4} \songti #2}
     \vfill
