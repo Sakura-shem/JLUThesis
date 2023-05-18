@@ -13,7 +13,6 @@
 \ProvidesClass{JLUThesis}[2023/05/17 v1.2 jilin University Thesis document class]
 \LoadClass[UTF8, oneside, a4paper, 12pt]{ctexbook}       % 论文使用A4纸，默认小四号字体
 
-
 \RequirePackage{xcolor}
 \RequirePackage{tocloft}
 % figure
@@ -48,6 +47,50 @@
 %                加载配置文件
 %-------------------------------------------------------------------------------
 \input{JLUThesis.cfg}
+
+
+
+%-------------------------------------------------------------------------------
+%                页眉页脚设计
+%-------------------------------------------------------------------------------
+\setlength{\voffset}{-15mm}
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{20pt}
+\setlength{\headsep}{5mm}
+\setlength{\footskip}{15mm}
+
+\fancypagestyle{style@empty}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{style@onlyfoot}{
+    \fancyhf{}
+	\fancyfoot[R]{\zihao{-5} \thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{style@gray}{
+    \fancyhf{}
+	\fancyfoot[R]{\color{gray} \zihao{-5} \thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{style@normal}{
+	\fancyhead{}
+	\fancyhead[C]{\zihao{-5} \songti \leftmark}
+	\fancyfoot{}
+	\fancyfoot[R]{\zihao{-5} \thepage}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0pt}
+    \renewcommand{\headruleskip}{2.5pt}
+}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[R]{\color{gray} \zihao{-5} \thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
 
 
 %-------------------------------------------------------------------------------
@@ -146,6 +189,7 @@
 }
 
 \newcommand{\makecover}{
+    \pagestyle{style@empty}
     \begin{titlepage}
         \newcommand{\HRule}{\rule{\linewidth}{1mm}}
         \quad \\[0.42cm]
@@ -170,52 +214,14 @@
     \end{titlepage}
 }
 
-
-
-
-%-------------------------------------------------------------------------------
-%                页眉页脚设计
-%-------------------------------------------------------------------------------
-\setlength{\voffset}{-15mm}
-\setlength{\topmargin}{0mm}
-\setlength{\headheight}{20pt}
-\setlength{\headsep}{5mm}
-\setlength{\footskip}{15mm}
-
-\fancypagestyle{style@empty}{
-	\fancyhf{}
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}
-}
-\fancypagestyle{style@onlyfoot}{
-    \fancyhf{}
-	\fancyfoot[R]{\zihao{-5} \thepage}
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}
-}
-\fancypagestyle{style@gray}{
-    \fancyhf{}
-	\fancyfoot[R]{\color{gray} \zihao{-5} \thepage}
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}
-}
-\fancypagestyle{style@normal}{
-	\fancyhead{}
-	\fancyhead[C]{\zihao{-5} \songti \leftmark}
-	\fancyfoot{}
-	\fancyfoot[R]{\zihao{-5} \thepage}
-	\renewcommand{\headrulewidth}{0.4pt}
-	\renewcommand{\footrulewidth}{0pt}
-    \renewcommand{\headruleskip}{2.5pt}
-}
-
-
 %-------------------------------------------------------------------------------
 %                承诺书
 %-------------------------------------------------------------------------------
 \newcommand{\commitment}[0]{
     \setlength{\baselineskip}{30pt}
+    \ctexset {chapter = {pagestyle = style@empty}}
     \chapter*{\zihao{-2} \songti \commitment@title}
+    \ctexset {chapter = {pagestyle = style@normal}}
     % \addcontentsline{toc}{chapter}{\commitment@title}
     \vspace{1.5cm}
     {\zihao{4} \songti \commitment@content} \\[10cm]
@@ -231,7 +237,6 @@
 \newcommand{\cbox}[2]{
     \newlength{\cboxwidth}
     \settowidth{\cboxwidth}{#1}
-
     \begin{flushleft}
         \vspace{-0.97cm}
         \hspace{\cboxwidth} \parbox[m][2em][t]{\dimexpr\linewidth-\cboxwidth-0.3cm}{\zihao{-4} \songti #2}
@@ -241,7 +246,6 @@
 \newcommand{\ebox}[2]{
     \newlength{\eboxwidth}
     \settowidth{\eboxwidth}{#1}
-
     \begin{flushleft}
         \vspace{-0.91cm}
         \hspace{\eboxwidth} \parbox[m][2em][t]{\dimexpr\linewidth-\eboxwidth-0.3cm}{\zihao{-4} \songti #2}
@@ -250,7 +254,10 @@
 }
 \newcommand{\baseabstract}[3]{
     \setlength{\baselineskip}{20pt}
+    \pagestyle{style@gray}
+    \ctexset {chapter = {pagestyle = style@gray}}
     \chapter*{\zihao{3} \songti \bfseries #1}
+    \ctexset {chapter = {pagestyle = style@normal}}
     % \addcontentsline{toc}{chapter}{#1}
     {\zihao{-4} \songti #2}
     \vfill
@@ -354,6 +361,5 @@
     \vspace{0.5cm}
     {\songti \zihao{-4} #1}
 }
-
 
 \endinput
