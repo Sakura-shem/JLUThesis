@@ -31,7 +31,7 @@ you can edit the .cfg file to change the style. Here are the available parameter
 - \cfgstyle@fetindex：How pictures, tables, formulas are numbered.
     - 0: gloabl
     - 1: 图 3.2 \<figlabel>
-    - 图 3-2 \<figlabel>
+    - 2: 图 3-2 \<figlabel>
 - \def\cfgstyle@citation{0}: The style of citation.
     - 0: gbt7714-numerical
     - 1: gbt7714-author-year 
