@@ -17,12 +17,12 @@ Make it based on the word template of 2019's School of Communication Engineering
 ## Usage
 **star ⭐**
 - Online: Overleaf website
-  - Download [JLU-Thesis-Overleaf.zip](./JLU-Thesis-Overleaf.zip);
-  - Create project by import zip file;
-  - Choose Compiler as XeLaTex;
+  - Download [JLU-Thesis-Overleaf.zip](./JLU-Thesis-Overleaf.zip)
+  - Create project by import zip file
+  - Choose Compiler as XeLaTex
   - **OverLeaf can't edit cfg file. you can edit it offline then upload**
-  - **OverLeaf zip file may not the latest. you can replace cls and cfg file to keep latest.**
-- Local: Miktex + vscode；
+  - **OverLeaf zip file may not the latest. you can replace cls and cfg file to keep latest**
+- Local: Miktex + vscode
 ### Change style
 you can edit the .cfg file to change the style. Here are the available parameters and the correspording styles.
 
@@ -34,7 +34,7 @@ you can edit the .cfg file to change the style. Here are the available parameter
     - 2: 图 3-2 \<figlabel>
 - \def\cfgstyle@citation{0}: The style of citation.
     - 0: gbt7714-numerical
-    - 1: gbt7714-author-year 
+    - 1: gbt7714-author-year
 
 ## Todo
 - 优化细节。
