@@ -15,10 +15,15 @@
 
 \RequirePackage{xcolor}
 \RequirePackage{tocloft}
+% 表格
+\RequirePackage{multirow}
+\RequirePackage{booktabs}
 % figure
 \RequirePackage{fancyhdr}
 \RequirePackage{geometry}
 \RequirePackage{graphicx}
+% figure - 标号
+\RequirePackage{caption}
 % 行距调节
 \RequirePackage{setspace}
 % font 
@@ -28,36 +33,66 @@
 \RequirePackage{adjustbox}
 \RequirePackage{calc}
 % cite
-\RequirePackage[backref]{hyperref} 
+\RequirePackage{gbt7714}
 
 % 字体
 \setmainfont[UprightFont=*,]{Times New Roman}
 \setCJKfamilyfont{cusong}[Path=fonts/, AutoFakeBold = {2.17}]{SimSun.ttf}
 \renewcommand*{\songti}{\CJKfamily{cusong}}
 % 1.5 倍行距
-\renewcommand{\baselinestretch}{1.5}
-
-% 版面上空2.5cm，下空2cm，左空2.8cm，右空1.8cm
-\geometry{a4paper, top = 25mm, bottom = 25mm, left = 28mm, right = 18mm}
-
-% 图片编号 -- 全局
-\counterwithout{figure}{chapter}
+\renewcommand{\baselinestretch}{1.75}
+% 版面上空2.5cm，下空2.5cm，左空2.8cm，右空1.8cm
+\geometry{a4paper, top = 25mm, bottom = 38mm, left = 28mm, right = 18mm}
+% 去掉图片标号后面的冒号
+\captionsetup[figure]{labelsep=space}
 
 %-------------------------------------------------------------------------------
 %                加载配置文件
 %-------------------------------------------------------------------------------
 \input{JLUThesis.cfg}
 
+% cfg 样式设置
+% 图片和公式标号 
+    % 全局
+\ifnum \cfgstyle@fetindex = 0
+    \counterwithout{figure}{chapter}
+    \counterwithout{equation}{chapter}
+    \counterwithout{table}{chapter}
+\fi
+    % 图 3.2 <figlabel>
+\ifnum \cfgstyle@fetindex = 1
+    \counterwithin{figure}{chapter}
+    \counterwithin{equation}{chapter}
+    \counterwithin{table}{chapter}
+\fi
+    % 图 3-2 <figlabel>
+\ifnum \cfgstyle@fetindex = 2
+    \RequirePackage{subcaption}
+    \counterwithin{figure}{chapter}
+    \counterwithin{equation}{chapter}
+    \counterwithin{table}{chapter}
+    \renewcommand {\thetable} {\thechapter{}-\arabic{table}} 
+    \renewcommand {\thefigure} {\thechapter{}-\arabic{figure}}
 
+\fi
+% 引用
+\ifnum \cfgstyle@citation = 0
+    \bibliographystyle{gbt7714-numerical}
+\else
+    \bibliographystyle{gbt7714-author-year}
+\fi
 
 %-------------------------------------------------------------------------------
 %                页眉页脚设计
 %-------------------------------------------------------------------------------
-\setlength{\voffset}{-15mm}
+\setlength{\voffset}{-10mm}
+% 页眉上边距
 \setlength{\topmargin}{0mm}
 \setlength{\headheight}{20pt}
-\setlength{\headsep}{5mm}
-\setlength{\footskip}{15mm}
+% 页眉与正文间距
+\setlength{\headsep}{7mm}
+% 页脚与正文间距
+\setlength{\footskip}{18pt}
 
 \fancypagestyle{style@empty}{
 	\fancyhf{}
@@ -81,7 +116,7 @@
 	\fancyhead[C]{\zihao{-5} \songti \leftmark}
 	\fancyfoot{}
 	\fancyfoot[R]{\zihao{-5} \thepage}
-	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\headrulewidth}{1pt}
 	\renewcommand{\footrulewidth}{0pt}
     \renewcommand{\headruleskip}{2.5pt}
 }
@@ -169,11 +204,11 @@
             % % Insert h-offset to manually center the title content.
             \hspace{\dimexpr\titleLRExtraWd + .5\titleSingleLineMaxWd - .5\titleMultiLineMaxWd\relax}
             \@titleBox{\centering \linespread{2}\selectfont #1}
-    \else
-        % case 3: #1 is fit for one line
-        \rlap{\titleUnderline}
-        \@titleBox{\centering #1}
-        \fi
+        \else
+            % case 3: #1 is fit for one line
+            \rlap{\titleUnderline}
+            \@titleBox{\centering #1}
+            \fi
     \fi
 }
 % main macro, using a simple table
@@ -231,6 +266,7 @@
     \setcounter{page}{1}
     \pagestyle{style@normal}
     \ctexset {chapter = {pagestyle = style@normal}}
+    \zihao{-4}
 }
 
 
@@ -313,7 +349,7 @@
 \setlength{\cftaftertoctitleskip}{0pt}                       % title 下间隔
 \setlength{\cftbeforechapskip}{5pt}                         % chapter 间隔
 \setlength{\cftbeforesecskip}{5pt}                          % section 间隔
-\setlength{\cftbeforesubsecskip}{5pt}                       % subsection 间隔
+\setlength{\cftbeforesubsecskip}{10pt}                       % subsection 间隔
 \setlength{\cftchapindent}{0pt}                             % 设置 chapter 部分缩进
 \setlength{\cftsecindent}{10pt}	                            % 设置 section 部分缩进
 \setlength{\cftsubsecindent}{20pt}                          % 设置 subsubsection 缩进
@@ -328,8 +364,8 @@
     chapter = {
         format = \centering \zihao{-3} \songti \bfseries,
         titleformat = \hspace{-10pt},
-        beforeskip = {-15pt},
-        afterskip = {5pt},
+        beforeskip = {-21pt},
+        afterskip = {11pt},
         number = \arabic{chapter},
         pagestyle = style@normal
     },
@@ -337,20 +373,19 @@
         format = \raggedright \zihao{4} \songti \bfseries,
         titleformat = \hspace{-10pt},
         beforeskip = {0pt},
-        afterskip = {5pt},
+        afterskip = {3pt},
     },
     subsection = {
         format = \raggedright \zihao{4} \songti \bfseries,
         titleformat = \hspace{-10pt},
-        afterskip = {5pt},
+        beforeskip = {0pt},
+        afterskip = {3pt},
     },
     subsubsection = {
         format = \zihao{-4} \songti,
         afterskip = {0pt},
     }
 }
-% 引用
-\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
 
 % 图片 --- 图片路径，图片标题，图片引用名
 \newcommand{\insertfig}[3]{

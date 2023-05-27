@@ -1,0 +1,19 @@
+\eabstract{
+Metagenomics is a discipline that directly extracts DNA sequences from environmental samples for research and exploration of microbial community-related issues. 
+Binning is the process of classifying DNA contigs according to species attributes, and is a crucial step in current metagenomic research.
+The challenges in effectively classifying metagenomic DNA contigs mainly include: first, current metagenomic binning methods do not fully utilize assembly graph information. 
+Second, in metagenomic datasets, the varying lengths of each DNA contig lead to poor binning results.  
+Therefore, this article focuses on some key aspects and challenges of the current DNA contig classification problem.
+
+(1) The extracted features were clustered using a deep density clustering algorithm.
+
+Using the feature vectors compressed by the variational graph autoencoder model in the second step, 
+this study utilized the improved density-based spatial clustering of applications with noise (DBSCAN) algorithm to cluster metagenomic overlapping groups. 
+In this algorithm, improvements based on locality-sensitive hashing (LSH) automatically determine the selection of the neighboring radius and sampling points, avoiding the manual input of potential clustering errors. 
+Ultimately, the determined two parameters and feature vectors serve as inputs to complete the entire deep density clustering process.
+
+(2) The proposed method was tested on datasets of varying complexities, and compared with other binning techniques based on three metrics: adjusted Rand index (ARI), precision, and recall.
+
+This study tested the proposed method on datasets with different complexities, and compared it with other binning techniques using three metrics: adjusted Rand index (ARI), precision, and recall.
+}{Metagenome binning, graph neural networks, variational autoencoders}
+

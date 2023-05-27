@@ -15,10 +15,10 @@
 \headerstyle
 
 % 中文摘要
-\input{support/cabstract}
+\input{header/cabstract}
 
 % 英文摘要
-\input{support/eabstract}
+\input{header/eabstract}
 
 % 目录
 \tableofcontents
@@ -30,21 +30,12 @@
 
 % 第一章
 \input{chapters/chapter1.tex}
-% 第二章
-\input{chapters/chapter2.tex}
-% 第三章
-\input{chapters/chapter3.tex}
-% 第四章
-\input{chapters/chapter4.tex}
-% 第五章
-\input{chapters/chapter5.tex}
 
-% 导入所有参考文献
-\bibliographystyle{Ref/JLUBst}
+% 参考文献
 \bibliography{Ref/refs}
 \addcontentsline{toc}{chapter}{参考文献}
 
 % 致谢
-\input{support/Acknowledgements.tex}
+\input{header/Acknowledgements.tex}
 
 \end{document}

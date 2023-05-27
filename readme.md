@@ -21,7 +21,20 @@ Make it based on the word template of 2019's School of Communication Engineering
   - Create project by import zip file;
   - Choose Compiler as XeLaTex;
   - **OverLeaf can't edit cfg file. you can edit it offline then upload**
-- Local: Miktex；
+  - **OverLeaf zip file may not the latest. you can replace cls and cfg file to keep latest.**
+- Local: Miktex + vscode；
+### Change style
+you can edit the .cfg file to change the style. Here are the available parameters and the correspording styles.
+
+如果你需要更改某些样式，你可以更改 .cfg 对应的参数。下面是支持的参数和对应的效果解释。
+
+- \cfgstyle@fetindex：How pictures, tables, formulas are numbered.
+    - 0: gloabl
+    - 1: 图 3.2 \<figlabel>
+    - 图 3-2 \<figlabel>
+- \def\cfgstyle@citation{0}: The style of citation.
+    - 0: gbt7714-numerical
+    - 1: gbt7714-author-year 
 
 ## Todo
 - 优化细节。
